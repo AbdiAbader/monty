@@ -28,7 +28,7 @@ line_number++;
 token = strtok(buf, " \t\n\r");
 if (token == NULL)
 continue;
-temp = opr(token)
+temp = opr(token);
 if (!temp)
 {
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
