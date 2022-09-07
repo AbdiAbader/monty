@@ -59,7 +59,7 @@ instruction_t ops[] = {
 {"nop", nop},
 {"sub", sub},
 {"mul", mul},
-{"div", div},
+{"div", divs},
 {NULL, NULL}
 };
 int i = 0;

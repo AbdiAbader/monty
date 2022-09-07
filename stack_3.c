@@ -5,7 +5,7 @@
  *@val: number of line
  *Return: nothing
  */
-void div(stack_t **head, unsigned int val)
+void divs(stack_t **head, unsigned int val)
 {
 int num;
 if (!(*head) || (*head)->next == NULL)
