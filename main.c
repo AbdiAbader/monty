@@ -25,8 +25,6 @@ exit(EXIT_FAILURE);
 while (fgets(buf,sizeof buf,datas.file))
 {
 line_number++;
- if (buf[0] == 10)
-   continue;
 token = strtok(buf," \t\n\r");
  if (token == NULL)
    continue;
