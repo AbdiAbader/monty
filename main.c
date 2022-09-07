@@ -25,10 +25,10 @@ exit(EXIT_FAILURE);
 while (fgets(buf, BUFSIZ, datas.file))
 {
 line_number++;
-if (buf[0] == '#')
-continue;
 token = strtok(buf, " \t\n\r");
 if (token == NULL)
+continue;
+if (token[0] == '#')
 continue;
 temp = opr(token);
 if (!temp)
