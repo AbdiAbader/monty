@@ -38,3 +38,23 @@ hold = (*head)->n;
 (*head)->n = (*head)->next->n;
 (*head)->next->n = hold;
 }
+/**
+ *addstack - add two stack values
+ *@head: head of stack
+ *@val: number of line
+ *Return: nothing
+ */
+void addstack(stack_t **head, unsigned int val)
+{
+int num;
+if (!(*head) || !((*head)->next) || (*head)->next == NULL)
+{
+fprintf(stderr, "L%u: can't swap, stack too short\n", val);
+free_memo(*head);
+fclose(datas.file);
+exit(EXIT_FAILURE);
+}
+num = (*head)->n + (*head)->next->n;
+pop(head, val);
+(*head)->n = num;
+}

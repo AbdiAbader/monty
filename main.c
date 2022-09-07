@@ -55,6 +55,7 @@ instruction_t ops[] = {
 {"pint", pint},
 {"pop", pop},
 {"swap", swap},
+{"add", addstack},
 {NULL, NULL}
 };
 int i = 0;
