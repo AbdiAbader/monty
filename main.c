@@ -25,6 +25,8 @@ exit(EXIT_FAILURE);
 while (fgets(buf, BUFSIZ, datas.file))
 {
 line_number++;
+if (buf[0] == '#')
+continue;
 token = strtok(buf, " \t\n\r");
 if (token == NULL)
 continue;
@@ -60,16 +62,14 @@ instruction_t ops[] = {
 {"sub", sub},
 {"mul", mul},
 {"div", divs},
+{"mod", mods},
 {NULL, NULL}
 };
 int i = 0;
 while (ops[i].opcode)
 {
-
 if (strcmp(f1, ops[i].opcode) == 0)
-{
 break;
-}
 i++;
 }
 return (ops[i].f);
