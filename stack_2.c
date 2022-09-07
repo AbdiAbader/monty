@@ -68,3 +68,23 @@ void nop(__attribute__((unused)) stack_t **head, unsigned int val)
 {
 (void) val;
 }
+/**
+ *sub - add two stack values
+ *@head: head of stack
+ *@val: number of line
+ *Return: nothing
+ */
+void sub(stack_t **head, unsigned int val)
+{
+int num;
+if (!(*head) || (*head)->next == NULL)
+{
+fprintf(stderr, "L%u: can't sub, stack too short\n", val);
+free_memo(*head);
+fclose(datas.file);
+exit(EXIT_FAILURE);
+}
+num = (*head)->n - (*head)->next->n;
+pop(head, val);
+(*head)->n = num;
+}
