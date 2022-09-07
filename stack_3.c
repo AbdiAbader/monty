@@ -15,6 +15,13 @@ free_memo(*head);
 fclose(datas.file);
 exit(EXIT_FAILURE);
 }
+if ((*head)->n == 0)
+{
+fprintf(stderr, "L%u: division by zero\n", val);
+free_memo(*head);
+fclose(datas.file);
+exit(EXIT_FAILURE);
+}
 num = (*head)->next->n / (*head)->n;
 pop(head, val);
 (*head)->n = num;
