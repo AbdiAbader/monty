@@ -73,3 +73,57 @@ num = (*head)->next->n % (*head)->n;
 pop(head, val);
 (*head)->n = num;
 }
+/**
+ *pchars - add two stack values
+ *@head: head of stack
+ *@val: number of line
+ *Return: nothing
+ */
+void pchars(stack_t **head, unsigned int val)
+{
+if (*head == NULL)
+{
+fprintf(stderr, "L%u: can't pchar, stack empty\n", val);
+free_memo(*head);
+fclose(datas.file);
+exit(EXIT_FAILURE);
+}
+if ((*head)->n <= 0 || (*head)->n >= 128)
+{
+fprintf(stderr, "L%u: can't pchar, value out of range\n", val);
+free_memo(*head);
+fclose(datas.file);
+exit(EXIT_FAILURE);
+}
+printf("%c\n", (*head)->n);
+}
+/**
+ *pstrs - add two stack values
+ *@head: head of stack
+ *@val: number of line
+ *Return: nothing
+ */
+void pstrs(stack_t **head, unsigned int val)
+{
+stack_t *hold;
+if (*head == NULL)
+{
+fprintf(stderr, "L%u: can't pstr, stack empty\n", val);
+free_memo(*head);
+fclose(datas.file);
+exit(EXIT_FAILURE);
+}
+hold = *head;
+while (hold)
+{
+if ((hold)->n <= 0 || (hold)->n >= 128)
+{
+fprintf(stderr, "L%u: can't pstr, value out of range\n", val);
+free_memo(*head);
+fclose(datas.file);
+exit(EXIT_FAILURE);
+}
+printf("%c\n", hold->n);
+hold = hold->next;
+}
+}
