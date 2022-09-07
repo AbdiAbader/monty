@@ -94,7 +94,8 @@ free(hold);
 */
 void pint(stack_t **head, __attribute__ ((unused)) unsigned int line_number)
 {
-if (head == NULL)
+
+if (*head == NULL)
 {
 fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 fclose(datas.file);
