@@ -15,6 +15,6 @@ fclose(datas.file);
 exit(EXIT_FAILURE);
 }
 hold = *head;
-head = head->next;
+*head = (*head)->next;
 free(hold);
 }
