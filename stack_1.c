@@ -86,3 +86,19 @@ head = head->next;
 free(hold);
 }
 }
+/**
+*pint - pushs value to the stack
+*@line_number: number of line
+*@head: head of list
+*Return: nothing
+*/
+void pint(stack_t **head, __attribute__ ((unused)) unsigned int line_number)
+{
+if (head == NULL)
+{
+fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+fclose(datas.file);
+exit(EXIT_FAILURE);
+}
+printf("%d\n", (*head)->n);
+}

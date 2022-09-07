@@ -52,6 +52,7 @@ void (*opr(char *f1))(stack_t **head, unsigned int line_number)
 instruction_t ops[] = {
 {"push", push},
 {"pall", pall},
+{"pint", pint},
 {NULL, NULL}
 };
 int i = 0;
