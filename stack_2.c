@@ -84,7 +84,7 @@ free_memo(*head);
 fclose(datas.file);
 exit(EXIT_FAILURE);
 }
-num = (*head)->n - (*head)->next->n;
+num = (*head)->next->n - (*head)->n;
 pop(head, val);
-(*head)->n = abs(num);
+(*head)->n = num;
 }
