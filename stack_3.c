@@ -123,7 +123,8 @@ free_memo(*head);
 fclose(datas.file);
 exit(EXIT_FAILURE);
 }
-printf("%c\n", hold->n);
+printf("%c", hold->n);
 hold = hold->next;
 }
+printf("\n");
 }
