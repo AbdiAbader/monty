@@ -106,23 +106,12 @@ printf("%c\n", (*head)->n);
 void pstrs(stack_t **head, unsigned int val)
 {
 stack_t *hold;
-if (*head == NULL)
-{
-fprintf(stderr, "L%u: can't pstr, stack empty\n", val);
-free_memo(*head);
-fclose(datas.file);
-exit(EXIT_FAILURE);
-}
+(void) val;
 hold = *head;
 while (hold)
 {
 if ((hold)->n <= 0 || (hold)->n >= 128)
-{
-fprintf(stderr, "L%u: can't pstr, value out of range\n", val);
-free_memo(*head);
-fclose(datas.file);
-exit(EXIT_FAILURE);
-}
+break;
 printf("%c", hold->n);
 hold = hold->next;
 }
