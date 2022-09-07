@@ -18,7 +18,7 @@ exit(EXIT_FAILURE);
 }
  for (i = 0;token[i];i++)
    {
-     if (token[i] <= 47  && token[i] >=  58)
+     if (token[i] >= 65 && token[i] <=  122)
        {
 fprintf(stderr, "L%d: usage: push integer\n", value);
 free_memo(datas.list);
