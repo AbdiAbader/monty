@@ -49,7 +49,7 @@ void addstack(stack_t **head, unsigned int val)
 int num;
 if (!(*head) || (*head)->next == NULL)
 {
-fprintf(stderr, "L%u: can't swap, stack too short\n", val);
+fprintf(stderr, "L%u: can't add, stack too short\n", val);
 free_memo(*head);
 fclose(datas.file);
 exit(EXIT_FAILURE);
