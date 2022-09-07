@@ -86,5 +86,5 @@ exit(EXIT_FAILURE);
 }
 num = (*head)->n - (*head)->next->n;
 pop(head, val);
-(*head)->n = num;
+(*head)->n = abs(num);
 }
