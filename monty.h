@@ -50,6 +50,7 @@ void free_memo(stack_t *head);
 void (*opr(char *f1))(stack_t **head, unsigned int line_number);
 void push(stack_t **head, unsigned int line_number);
 void pop(stack_t **head, unsigned int line_number);
+void swap(stack_t **head, unsigned int line_number);
 stack_t *add(stack_t **head, int value);
 void pall(stack_t **head, unsigned int line_number);
 void pint(stack_t **head, unsigned int line_number);

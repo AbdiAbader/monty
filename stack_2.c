@@ -18,3 +18,23 @@ hold = *head;
 *head = (*head)->next;
 free(hold);
 }
+/**
+ *swap - swap staacks
+ *@head: head of the list
+ *@val: number of line
+ *Return: Nothing
+ */
+void swap(stack_t **head, unsigned int val)
+{
+int hold;
+if (!(*head) || !((*head)->next) || (*head)->next == NULL)
+{
+fprintf(stderr, "L%u: can't swap, stack too short\n", val);
+free_memo(*head);
+fclose(datas.file);
+exit(EXIT_FAILURE);
+}
+hold = (*head)->n;
+(*head)->n = (*head)->next->n;
+(*head)->next->n = hold;
+}
