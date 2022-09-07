@@ -47,7 +47,7 @@ hold = (*head)->n;
 void addstack(stack_t **head, unsigned int val)
 {
 int num;
-if (!(*head) || !((*head)->next))
+if (!(*head) || (*head)->next == NULL)
 {
 fprintf(stderr, "L%u: can't swap, stack too short\n", val);
 free_memo(*head);
