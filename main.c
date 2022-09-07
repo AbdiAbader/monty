@@ -56,6 +56,7 @@ instruction_t ops[] = {
 {"pop", pop},
 {"swap", swap},
 {"add", addstack},
+{"nop", nop},
 {NULL, NULL}
 };
 int i = 0;

@@ -58,3 +58,13 @@ num = (*head)->n + (*head)->next->n;
 pop(head, val);
 (*head)->n = num;
 }
+/**
+ *nop - do nothing
+ *@head: head of the list
+ *@val: number of line
+ *Return: nothing
+ */
+void nop(__attribute__((unused)) stack_t **head, unsigned int val)
+{
+(void) val;
+}
