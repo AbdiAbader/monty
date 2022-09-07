@@ -6,7 +6,7 @@
  */
 void push(stack_t **head, __attribute__ ((unused)) unsigned int value)
 {
-  int i;
+int i;
 char *token;
 token = strtok(NULL, " \t\n\r");
 if (!token)
@@ -18,7 +18,7 @@ exit(EXIT_FAILURE);
 }
  for (i = 0;token[i];i++)
    {
-     if (token[i] >= 65 && token[i] <=122)
+     if (token[i] < 48  && token[i] >  57)
        {
 fprintf(stderr, "L%d: usage: push integer\n", value);
 free_memo(datas.list);
