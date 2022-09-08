@@ -20,26 +20,22 @@ hold = hold->next;
 }
 }
 }
-void rotrs(stack_t **head, __attribute__ ((unused)) unsigned int value)
+/**
+*rotrs - rotates top of the elemenets
+*@stack: head of the list
+*@value: line number
+*Return: none
+*/
+void rotrs(stack_t **stack, __attribute__ ((unused)) unsigned int value)
 {
-int buf[BUFSIZ];
-int i = 0;
-stack_t *hold = *head ,*s = *head;
-if (hold && hold->next)
+stack_t *last;
+if (*stack && (*stack)->next)
 {
-while (hold != NULL)
-{
-buf[i] = hold->n;
-hold = hold->next;
-i++;
+last = *stack;
+while (last->next != NULL)
+last = last->next;
+last->prev->next = NULL;
+last->next = *stack;
+*stack = last;
 }
- i--;
-while (i >= 0 && s != NULL)
-{
-s->n = buf[i];
-s = s->next;
- i--;
- }
- }
-
 }
