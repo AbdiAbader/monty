@@ -9,6 +9,8 @@ void rotls(stack_t **head, __attribute__ ((unused)) unsigned int value)
 {
 int temp;
 stack_t *first = *head, *last = *head;
+if ((*head)->next == NULL || (*head)->next->next == NULL)
+return;
 temp = first->n;
 while (last->next != NULL)
 {
