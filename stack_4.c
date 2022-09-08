@@ -7,31 +7,32 @@
 */
 stack_t *add_end(stack_t **head, const int n)
 {
-stack_t *dark, *hold;
-dark = malloc(sizeof(stack_t));
-if (dark == NULL)
+stack_t *new, *last;
+new = malloc(sizeof(stack_t));
+if (new == NULL)
 {
 fprintf(stderr, "Error: malloc failed\n");
 free_memo(datas.list);
 fclose(datas.file);
 exit(EXIT_FAILURE);
 }
-dark->n = n;
-dark->next = NULL;
-dark->prev = NULL;
+new->n = n;
+new->next = NULL;
+
 if (*head == NULL)
-*head = dark;
-else
 {
-hold = *head;
-while (hold->next != NULL)
-{
-hold = hold->next;
+new->prev = NULL;
+*head = new;
+return (new);
 }
-hold->next = dark;
-dark->prev = hold;
-}
-return (*head);
+
+last = *head;
+while (last->next != NULL)
+last = last->next;
+last->next = new;
+new->prev = last;
+
+return (new);
 }
 /**
  *rotls - rotates top of the elemenets
@@ -41,11 +42,6 @@ return (*head);
  */
 void rotls(stack_t **head, __attribute__ ((unused)) unsigned int value)
 {
-if ((*head)->next == NULL && (*head)->next->next == NULL)
-return;
-else
-{
-*head = add_end(head, (*head)->n);
+add_end(head, (*head)->n);
 pop(head, value);
-}
 }
