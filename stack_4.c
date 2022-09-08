@@ -20,3 +20,26 @@ hold = hold->next;
 }
 }
 }
+void rotrs(stack_t **head, __attribute__ ((unused)) unsigned int value)
+{
+int buf[BUFSIZ];
+int i = 0;
+stack_t *hold = *head ,*s = *head;
+if (hold && hold->next)
+{
+while (hold != NULL)
+{
+buf[i] = hold->n;
+hold = hold->next;
+i++;
+}
+ i--;
+while (i >= 0 && s != NULL)
+{
+s->n = buf[i];
+s = s->next;
+ i--;
+ }
+ }
+
+}
