@@ -7,15 +7,16 @@
 */
 void rotls(stack_t **head, __attribute__ ((unused)) unsigned int value)
 {
-stack_t *first = *head, *last = *head;
-if ((*head)->next == NULL || (*head)->next->next == NULL)
-return;
-
-while (last->next != NULL)
-last = last->next;
-(*head) = (*head)->next;
-(*head)->next->prev = NULL;
-last->next = first;
-first->prev = last;
-first->next = NULL;
+stack_t *hold = *head;
+int temp;
+if (hold && hold->next)
+{
+while (hold->next != NULL)
+{
+temp = hold->n;
+hold->n = hold->next->n;
+hold->next->n = temp;
+hold = hold->next;
+}
+}
 }
