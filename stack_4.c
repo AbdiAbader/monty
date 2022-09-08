@@ -41,6 +41,9 @@ return (*head);
  */
 void rotls(stack_t **head, __attribute__ ((unused)) unsigned int value)
 {
+if ((*head)->next != NULL || (*head)->next->next != NULL)
+{
 add_end(head, (*head)->n);
 pop(head, value);
+}
 }
