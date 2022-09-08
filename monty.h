@@ -57,9 +57,11 @@ void addstack(stack_t **head, unsigned int line_number);
 void sub(stack_t **head, unsigned int line_number);
 void mul(stack_t **head, unsigned int line_number);
 void divs(stack_t **head, unsigned int line_number);
+stack_t *add_end(stack_t **head, const int n);
 void mods(stack_t **head, unsigned int line_number);
 void pall(stack_t **head, unsigned int line_number);
 void pchars(stack_t **head, unsigned int line_number);
 void pstrs(stack_t **head, unsigned int line_number);
 void pint(stack_t **head, unsigned int line_number);
+void rotls(stack_t **head, unsigned int line_number);
 #endif

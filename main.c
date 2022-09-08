@@ -65,6 +65,7 @@ instruction_t ops[] = {
 {"mod", mods},
 {"pchar", pchars},
 {"pstr", pstrs},
+{"rotl", rotls},
 {NULL, NULL}
 };
 int i = 0;
