@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- *div - add two stack values
+ *divs - add two stack values
  *@head: head of stack
  *@val: number of line
  *Return: nothing
