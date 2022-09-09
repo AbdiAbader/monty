@@ -1,5 +1,5 @@
 #include "monty.h"
-data_t datas = {NULL, NULL, "stack"};
+data_t datas = {NULL, NULL, NULL};
 /**
 *main - main function for monty interpreter
 *@argc: argumnets  conuter
@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 void (*temp)(stack_t **, unsigned int);
 unsigned int line_number = 0;
 char buf[BUFSIZ], *token;
+datas.types = "stack";
 if (argc != 2)
 {
 fprintf(stderr, "USAGE: monty file\n");
