@@ -27,7 +27,11 @@ fclose(datas.file);
 exit(EXIT_FAILURE);
 }
 }
-add(head, atoi(token));
+ if (strcmp(datas.types,"queue") == 0)
+end(head, atoi(token));
+  if (strcmp(datas.types,"stack") == 0)
+   add(head, atoi(token));
+
 }
 /**
  *add - adds to doubly linked list

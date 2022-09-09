@@ -1,5 +1,5 @@
 #include "monty.h"
-data_t datas = {NULL, NULL};
+data_t datas = {NULL, NULL,"stack"};
 /**
 *main - main function for monty interpreter
 *@argc: argumnets  conuter
@@ -30,6 +30,16 @@ if (token == NULL)
 continue;
 if (token[0] == '#')
 continue;
+ if (strcmp(token,"queue") == 0)
+   {
+     datas.types = "queue";
+     continue;
+   }
+  if (strcmp(token,"stack") == 0)
+    {
+     datas.types = "stack";
+     continue;
+   }
 temp = opr(token);
 if (!temp)
 {
@@ -51,6 +61,7 @@ return (0);
 */
 void (*opr(char *f1))(stack_t **head, unsigned int line_number)
 {
+
 instruction_t ops[] = {
 {"push", push},
 {"pall", pall},

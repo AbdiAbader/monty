@@ -44,6 +44,7 @@ typedef struct data
 {
 FILE *file;
 stack_t *list;
+char *types;
 } data_t;
 extern data_t datas;
 void free_memo(stack_t *head);
@@ -53,6 +54,7 @@ void pop(stack_t **head, unsigned int line_number);
 void nop(stack_t **head, unsigned int line_number);
 void swap(stack_t **head, unsigned int line_number);
 stack_t *add(stack_t **head, int value);
+stack_t *end(stack_t **head, int n);
 void addstack(stack_t **head, unsigned int line_number);
 void rotrs(stack_t **head, unsigned int value);
 void sub(stack_t **head, unsigned int line_number);
