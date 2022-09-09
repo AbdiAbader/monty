@@ -39,7 +39,7 @@ void (*f)(stack_t **stack, unsigned int line_number);
  *struct data - global usage
  *@file: file discriptor
  *@list: head of the list
- *@types: stack or queue 
+ *@types: stack or queue
 */
 typedef struct data
 {
