@@ -27,10 +27,10 @@ fclose(datas.file);
 exit(EXIT_FAILURE);
 }
 }
- if (strcmp(datas.types,"queue") == 0)
+if (strcmp(datas.types, "queue") == 0)
 end(head, atoi(token));
-  if (strcmp(datas.types,"stack") == 0)
-   add(head, atoi(token));
+if (strcmp(datas.types, "stack") == 0)
+add(head, atoi(token));
 
 }
 /**

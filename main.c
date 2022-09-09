@@ -1,5 +1,5 @@
 #include "monty.h"
-data_t datas = {NULL, NULL,"stack"};
+data_t datas = {NULL, NULL, "stack"};
 /**
 *main - main function for monty interpreter
 *@argc: argumnets  conuter
@@ -26,20 +26,13 @@ while (fgets(buf, BUFSIZ, datas.file))
 {
 line_number++;
 token = strtok(buf, " \t\n\r");
-if (token == NULL)
+if (token == NULL || token[0] == '#')
 continue;
-if (token[0] == '#')
+if (strcmp(token, "queue") == 0 || strcmp(token, "stack") == 0)
+{
+datas.types = token;
 continue;
- if (strcmp(token,"queue") == 0)
-   {
-     datas.types = "queue";
-     continue;
-   }
-  if (strcmp(token,"stack") == 0)
-    {
-     datas.types = "stack";
-     continue;
-   }
+}
 temp = opr(token);
 if (!temp)
 {
