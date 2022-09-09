@@ -28,11 +28,8 @@ line_number++;
 token = strtok(buf, " \t\n\r");
 if (token == NULL || token[0] == '#')
 continue;
-if (strcmp(token, "queue") == 0 || strcmp(token, "stack") == 0)
-{
-datas.types = token;
+if (check(token) == 1)
 continue;
-}
 temp = opr(token);
 if (!temp)
 {
@@ -81,4 +78,23 @@ break;
 i++;
 }
 return (ops[i].f);
+}
+/**
+ *check - for satck or queue
+ *@token: token
+ *Return: 1 if find or 0
+ */
+int  check(char *token)
+{
+if (strcmp(token, "queue") == 0)
+{
+datas.types = "queue";
+return (1);
+}
+if (strcmp(token, "stack") == 0)
+{
+datas.types = "stack";
+return (1);
+}
+return (0);
 }

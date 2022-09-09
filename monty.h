@@ -64,6 +64,7 @@ void divs(stack_t **head, unsigned int line_number);
 stack_t *add_end(stack_t **head, const int n);
 void mods(stack_t **head, unsigned int line_number);
 void pall(stack_t **head, unsigned int line_number);
+int check(char *t);
 void pchars(stack_t **head, unsigned int line_number);
 void pstrs(stack_t **head, unsigned int line_number);
 void pint(stack_t **head, unsigned int line_number);
