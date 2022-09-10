@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
-*push_q - add node at the end
+*end - add node at the end
 *@head: head of the list
 *@n: number
 *Return: address of the head
